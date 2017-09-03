@@ -24,9 +24,7 @@ func ShowPic(w http.ResponseWriter, r *http.Request) {
 
 
 func GetAllFile(w http.ResponseWriter, r *http.Request) {
-	endpoint := os.Getenv("OBJECT_STORAGE_CLUSTER_IP") + ":" + os.Getenv("OBJECT_STORAGE_CLUSTER_PORT")
-	accessKeyID := os.Getenv("OBJECT_STORAGE_CLUSTER_ACCESS_KEY_ID")
-	secretAccessKey := os.Getenv("OBJECT_STORAGE_CLUSTER_SECRET_ACCESS_KEY")
+
 	useSSL := false
         myFiles := make([]string,0)
 
@@ -73,9 +71,7 @@ func GetAllFile(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetFile(w http.ResponseWriter, r *http.Request) {
-	endpoint := os.Getenv("OBJECT_STORAGE_CLUSTER_IP") + ":" + os.Getenv("OBJECT_STORAGE_CLUSTER_PORT")
-	accessKeyID := os.Getenv("OBJECT_STORAGE_CLUSTER_ACCESS_KEY_ID")
-	secretAccessKey := os.Getenv("OBJECT_STORAGE_CLUSTER_SECRET_ACCESS_KEY")
+
 	useSSL := false
 
 	// Initialize minio client object.
@@ -143,9 +139,6 @@ func PutFile(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	endpoint := os.Getenv("OBJECT_STORAGE_CLUSTER_IP") + ":" + os.Getenv("OBJECT_STORAGE_CLUSTER_PORT")
-	accessKeyID := os.Getenv("OBJECT_STORAGE_CLUSTER_ACCESS_KEY_ID")
-	secretAccessKey := os.Getenv("OBJECT_STORAGE_CLUSTER_SECRET_ACCESS_KEY")
 	useSSL := false
 
 	// Initialize minio client object.
