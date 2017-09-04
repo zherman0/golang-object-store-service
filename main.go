@@ -7,8 +7,6 @@ import (
 	b64 "encoding/base64"
 )
 
-
-
 var tmp_endpoint, _ = b64.StdEncoding.DecodeString(os.Getenv("BUCKET_ENDPOINT"))
 var tmp_accessKeyID, _ = b64.StdEncoding.DecodeString(os.Getenv("BUCKET_ID"))
 var tmp_secretAccessKey, _ = b64.StdEncoding.DecodeString(os.Getenv("BUCKET_PWORD"))

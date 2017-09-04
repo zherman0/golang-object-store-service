@@ -9,7 +9,6 @@ import (
 	"github.com/minio/minio-go"
 	"log"
 	"strings"
-	"os"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -41,8 +40,8 @@ func GetAllFile(w http.ResponseWriter, r *http.Request) {
 
 
 	fmt.Printf("Getting all file names for bucket: %v\n", bucketName)
-	fmt.Printf("Cluster IP: %v\n", os.Getenv("OBJECT_STORAGE_CLUSTER_IP"))
-	fmt.Printf("Cluster POrt: %v\n", os.Getenv("OBJECT_STORAGE_CLUSTER_PORT"))
+	fmt.Printf("Cluster IP:Port %v\n", endpoint)
+	fmt.Printf("Cluster Creditials: %v ***** %v\n", accessKeyID, secretAccessKey)
 
 
 	// Create a done channel to control 'ListObjectsV2' go routine.
